@@ -3,11 +3,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-def plot_missingness(miss_df: pd.DataFrame, out_path: Path, top_n: int = 30) -> None:
-    """Plot missing data in a horizontal bar chart."""
+def plot_missingness(
+    df: pd.DataFrame,
+    out_path: Path,
+    top_n: int = 30,
+    **kwargs
+) -> None:
+    miss_df = pd.DataFrame({
+        "column": df.columns,
+        "missing_rate": df.isna().mean()
+    }).sort_values("missing_rate", ascending=False)
+
     plot_df = miss_df.head(top_n).iloc[::-1]
+
     plt.figure()
-    # BLANK 9: create a horizontal bar chart using column names and missing_rate
     plt.barh(plot_df["column"], plot_df["missing_rate"])
     plt.xlabel("Missing rate")
     plt.title(f"Top {min(top_n, len(miss_df))} columns by missingness")
@@ -16,10 +25,16 @@ def plot_missingness(miss_df: pd.DataFrame, out_path: Path, top_n: int = 30) -> 
     plt.close()
 
 
-def plot_corr_heatmap(corr: pd.DataFrame, out_path: Path) -> None:
-    """Create a heatmap of correlations."""
+def plot_corr_heatmap(
+    df: pd.DataFrame,
+    out_path: Path,
+    **kwargs
+) -> None:
+    corr = df.corr(numeric_only=True)
+
     if corr.empty:
         return
+
     plt.figure()
     plt.imshow(corr.values, aspect="auto")
     plt.colorbar()

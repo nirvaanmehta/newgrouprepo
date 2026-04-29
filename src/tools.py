@@ -47,4 +47,5 @@ TOOL_DESCRIPTIONS = {
     "multiple_linear_regression": "Fit a multiple linear regression model to predict an outcome from predictors.",
     "predict_sleep_quality": "Predict sleep quality score (1-10) from phone usage before sleep (minutes) and sleep duration (hours).",
     "predict_stress_from_sleep_phone": "Predict stress level (1-10) from sleep duration (hours) and phone usage before sleep (minutes).",
+    "plot_corr_heatmap": "Generate correlation heatmap for all numeric columns."
 }
