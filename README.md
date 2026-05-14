@@ -7,3 +7,4 @@ Our agent is a data analysis assistant that supports individuals' understanding 
 To use, clone this repo and create a virtual Python environment. Download dependencies from the requirements.txt file and set up the OpenAI API key in the .env file (delete before commiting changes!). Then run the agent. 
 
 -further detailed explanations to come as we build our analytical assistant agent-
+ - add that you need to everytime put in the .env file the API
