@@ -16,7 +16,7 @@ Our agent has a wide collection of tools for exploring the dataset (summarize, b
 To use, clone this repo and create a virtual Python environment. Download dependencies from the requirements.txt file and set up the OpenAI API key in the .env file (delete before committing changes!). Then run the agent. 
 
 # Example prompts
-"schema"
-"help me analyze this dataset"
-"run a multiple linear regression for sleep quality using sleep duration and stress level as predictors"
+- "schema"
+- "help me analyze this dataset"
+- "run a multiple linear regression for sleep quality using sleep duration and stress level as predictors"
 
